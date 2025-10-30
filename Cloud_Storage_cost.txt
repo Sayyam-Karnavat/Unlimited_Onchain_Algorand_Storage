@@ -1,0 +1,55 @@
+### Azure Blob Storage and Google Cloud Storage (GCP) with respect to:
+
+1. Upload cost (ingress)
+
+2. Storage cost (monthly)
+
+3. Lifetime / recurring charges
+
+4. Other possible charges
+
+
+
+
+
+
+1. Uploading a File (1 GB)
+    ✅ Ingress (upload) is FREE on both Azure and GCP
+
+        Both platforms do not charge for data upload (ingress) into their storage services.
+
+        So uploading your 1 GB file doesn't incur a charge just for the upload.
+
+
+2. Monthly Storage Cost
+
+    Once uploaded, you will be charged for storing that 1 GB file every month. Storage is not free for life — it's billed monthly.
+
+    Here are the estimated storage prices (as of late 2024) for Standard Tier in the US or similar regions (rounded for clarity):
+
+        | Cloud | Storage Class    | Monthly Price (per GB) | Total Monthly for 1 GB |
+        | ----- | ---------------- | ---------------------- | ---------------------- |
+        | Azure | Hot Blob Storage | ~$0.0184 per GB        | ~$0.0184               |
+        | GCP   | Standard Storage | ~$0.020 per GB         | ~$0.020                |
+
+
+3. Is It Free After Upload? (Lifetime?)
+
+- No. Once a file is uploaded to Azure Blob or GCP Storage:
+
+    - You are charged monthly based on:
+
+        - File size (e.g., 1 GB)
+        - Storage class (Standard, Cool, Archive, etc.)
+        - Region (pricing can vary per location)
+        - There is no free lifetime storage.
+        - Even if you never access or change the file, it still costs monthly.
+
+
+4. Additional Costs to Be Aware Of
+
+| Cost Type             | Azure                                             | GCP                                           |
+| --------------------- | ------------------------------------------------- | --------------------------------------------- |
+| **Egress (download)** | Charged (e.g., ~$0.09 per GB after free tier)     | Charged (e.g., ~$0.12 per GB after free tier) |
+| **Operations (API)**  | May be charged for frequent access in lower tiers | Same — especially in Nearline/Coldline        |
+| **Early deletion**    | Archive/Cool tiers have minimum storage durations | Same for Coldline/Archive classes             |
