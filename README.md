@@ -46,7 +46,7 @@ streamlit run app.py
 
 ### Smart Contract / Blockchain Asset Links
 
-<p> Link <p>
+<p> APP address :- U4O4VROKPXS5GFXGNOAI3SV4R63SYVR5IKE3UCQ2ZHU27V2T5MHJNBEF7I <p>
 
 
 ### 🧠 Architecture Overview
